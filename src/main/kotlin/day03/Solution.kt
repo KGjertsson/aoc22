@@ -1,4 +1,4 @@
-package day3
+package day03
 
 import java.io.File
 
@@ -59,16 +59,16 @@ class Solution {
         "Z" to 52,
     )
 
-    fun solveFirst(): Int {
-        return File("src/main/kotlin/day3/input.txt").readLines()
+    fun solveFirst(): Int =
+        File("src/main/kotlin/day03/input.txt").readLines()
             .map { Pair(it.substring(0, it.length / 2), it.substring(it.length / 2)) }
             .flatMap { pair -> pair.first.filter { pair.second.contains(it) }.toSet() }
             .map { it.toString() }
             .sumOf { packageValues[it]!! }
-    }
 
-    fun solveSecond(): Int {
-        return File("src/main/kotlin/day3/input.txt").readLines()
+
+    fun solveSecond(): Int =
+        File("src/main/kotlin/day03/input.txt").readLines()
             .withIndex()
             .groupBy { it.index / 3 }.values
             .map { it.map { luggage -> luggage.value } }
@@ -80,6 +80,5 @@ class Solution {
             }
             .map { it.toString() }
             .sumOf { packageValues[it]!! }
-    }
 
 }

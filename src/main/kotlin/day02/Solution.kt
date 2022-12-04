@@ -1,4 +1,4 @@
-package day2
+package day02
 
 import java.io.File
 
@@ -50,18 +50,16 @@ class Solution {
         "Z" to 6
     )
 
-    fun solveFirst(): Int {
-        return File("src/main/kotlin/day2/input.txt").readLines()
+    fun solveFirst(): Int =
+        File("src/main/kotlin/day02/input.txt").readLines()
             .map { it.split(" ") }
             .map { GameValue(it[1], it[0] + it[1]) }
             .sumOf { played[it.played]!! + game[it.game]!! }
 
-    }
 
-    fun solveSecond(): Int {
-        return File("src/main/kotlin/day2/input.txt").readLines()
+    fun solveSecond(): Int =
+        File("src/main/kotlin/day02/input.txt").readLines()
             .map { it.split(" ") }
             .sumOf { shouldScore[it[1]]!! + secondGame[it[1]]!![it[0]]!! }
-    }
 
 }

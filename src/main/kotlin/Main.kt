@@ -1,4 +1,4 @@
-import day3.Solution
+import day04.Solution
 
 fun main() {
     val solution = Solution()
