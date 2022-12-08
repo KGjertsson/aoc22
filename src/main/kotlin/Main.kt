@@ -1,8 +1,8 @@
-import day06.Solution
+import day07.Solution
 
 fun main() {
     val solution = Solution()
 
-    print(solution.solveFirst())
-//    print(solution.solveSecond())
+//    println(solution.solveFirst())
+    println(solution.solveSecond())
 }
